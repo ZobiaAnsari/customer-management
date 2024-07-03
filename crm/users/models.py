@@ -10,7 +10,9 @@ class Users(models.Model):
     address = models.CharField(max_length=30)
     country = models.CharField(max_length=30)
     city = models.CharField(max_length=30)
-    user= models.IntegerField()
+    password = models.CharField(max_length=30, default=None)
+    user= models.IntegerField(default=0)
+    is_admin = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
